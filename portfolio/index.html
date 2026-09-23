@@ -1,0 +1,721 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shreya Achar | Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08070d;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    z-index:100;
+
+    background:rgba(8,7,13,0.9);
+    border-bottom:1px solid #25202f;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#c084fc;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:#bbb;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#c084fc;
+}
+
+
+/* HOME */
+
+#home{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:120px 10% 60px;
+
+    background:
+    radial-gradient(circle at 20% 30%, #24133d 0%, transparent 35%),
+    radial-gradient(circle at 80% 70%, #35152d 0%, transparent 35%),
+    #08070d;
+}
+
+.intro{
+    max-width:600px;
+}
+
+.intro small{
+    color:#c084fc;
+    letter-spacing:3px;
+}
+
+.intro h1{
+    font-size:70px;
+    margin:20px 0;
+
+    background:linear-gradient(
+        90deg,
+        #c084fc,
+        #f472b6
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.intro h2{
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+.intro p{
+    color:#999;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:30px;
+    margin-right:10px;
+
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.primary{
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #ec4899
+    );
+
+    color:white;
+}
+
+.secondary{
+    border:1px solid #555;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+
+/* PHOTO */
+
+.photo{
+    width:330px;
+    height:330px;
+
+    border-radius:50%;
+    padding:7px;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #ec4899,
+        #fb7185
+    );
+
+    box-shadow:
+    0 0 50px rgba(168,85,247,0.35);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:7px solid #08070d;
+}
+
+
+/* SECTIONS */
+
+section:not(#home){
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h2{
+    font-size:42px;
+    color:#c084fc;
+}
+
+.title p{
+    color:#888;
+    margin-top:10px;
+}
+
+
+/* ABOUT */
+
+.about{
+    max-width:900px;
+    margin:auto;
+
+    padding:40px;
+
+    background:#111019;
+
+    border:1px solid #282331;
+    border-radius:20px;
+
+    color:#aaa;
+    line-height:1.9;
+}
+
+
+/* SKILLS */
+
+.skills{
+    max-width:1000px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.skill{
+    padding:25px;
+
+    background:#111019;
+    border:1px solid #282331;
+    border-radius:15px;
+
+    text-align:center;
+
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:translateY(-7px);
+    border-color:#8b5cf6;
+}
+
+.skill h3{
+    color:#ddd;
+}
+
+.skill p{
+    color:#8b5cf6;
+    margin-top:8px;
+}
+
+
+/* PROJECTS */
+
+.projects{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.project{
+    padding:30px;
+
+    min-height:260px;
+
+    background:#111019;
+
+    border:1px solid #282331;
+
+    border-radius:20px;
+
+    transition:0.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+    border-color:#ec4899;
+}
+
+.project h3{
+    color:#c084fc;
+    margin:15px 0;
+    font-size:24px;
+}
+
+.project p{
+    color:#999;
+    line-height:1.7;
+}
+
+.tags{
+    margin-top:20px;
+}
+
+.tags span{
+    display:inline-block;
+
+    padding:6px 10px;
+    margin:3px;
+
+    border-radius:20px;
+
+    background:#21172c;
+    color:#c084fc;
+
+    font-size:12px;
+}
+
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:#999;
+    margin:20px;
+}
+
+.contact a{
+    display:inline-block;
+    padding:14px 25px;
+
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #ec4899
+    );
+
+    border-radius:30px;
+
+    color:white;
+    text-decoration:none;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+
+    color:#666;
+
+    border-top:1px solid #201c27;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav ul{
+        display:none;
+    }
+
+    #home{
+        flex-direction:column-reverse;
+        text-align:center;
+
+        gap:50px;
+    }
+
+    .intro h1{
+        font-size:50px;
+    }
+
+    .photo{
+        width:260px;
+        height:260px;
+    }
+
+    .skills,
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        Shreya.
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- HOME -->
+
+<section id="home">
+
+    <div class="intro">
+
+        <small>WELCOME TO MY PORTFOLIO</small>
+
+        <h1>
+            Shreya Achar
+        </h1>
+
+        <h2>
+            BCA Graduate | Python | Data Analytics
+        </h2>
+
+        <p>
+            Hello! I am Shreya, a BCA graduate interested in
+            Python, Data Analytics and Web Technologies.
+            This is my personal portfolio where I showcase
+            my skills, projects and learning journey.
+        </p>
+
+
+        <div class="buttons">
+
+            <a href="#projects"
+               class="btn primary">
+                View My Work
+            </a>
+
+            <a href="#contact"
+               class="btn secondary">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHOTO -->
+
+    <div class="photo">
+
+        <img src="profile.jpg"
+             alt="Shreya Achar"
+             onerror="this.src='https://via.placeholder.com/500x500/171321/c084fc?text=Your+Photo'">
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="title">
+
+        <h2>About Me</h2>
+
+        <p>Get to know me</p>
+
+    </div>
+
+
+    <div class="about">
+
+        I am a BCA graduate from Mangalore University.
+        I have learned Python, SQL, HTML, CSS, JavaScript,
+        Django and Data Analytics.
+
+        <br><br>
+
+        I have also worked on practical projects including
+        House Rent Prediction and Sales Analysis using Python.
+        I am currently looking for an opportunity to start
+        my professional career in the IT field.
+
+    </div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="title">
+
+        <h2>My Skills</h2>
+
+        <p>Technologies I have learned</p>
+
+    </div>
+
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>Python</h3>
+            <p>Programming</p>
+        </div>
+
+        <div class="skill">
+            <h3>SQL</h3>
+            <p>Database</p>
+        </div>
+
+        <div class="skill">
+            <h3>HTML</h3>
+            <p>Web Development</p>
+        </div>
+
+        <div class="skill">
+            <h3>CSS</h3>
+            <p>Web Design</p>
+        </div>
+
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <p>Frontend</p>
+        </div>
+
+        
+
+        <div class="skill">
+            <h3>Data Analysis</h3>
+            <p>Analytics</p>
+        </div><br>
+
+        <div class="skill">
+            <h3>Power BI</h3>
+            <p>Visualization</p>
+        </div>
+
+        
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="title">
+
+        <h2>My Projects</h2>
+
+        <p>Some of my practical work</p>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <small>PROJECT 01</small>
+
+            <h3>
+                House Rent Prediction
+            </h3>
+
+            <p>
+                Machine learning project to predict house
+                rent using property-related features.
+            </p>
+
+            <div class="tags">
+
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Scikit-learn</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project">
+
+            <small>PROJECT 02</small>
+
+            <h3>
+                Sales Analysis
+            </h3>
+
+            <p>
+                Python-based data analysis project used to
+                clean, analyze and understand sales data.
+            </p>
+
+            <div class="tags">
+
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Matplotlib</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project">
+
+            <small>PROJECT 03</small>
+
+            <h3>
+                E-Commerce Website
+            </h3>
+
+            <p>
+                Responsive e-commerce website created using
+                HTML, CSS and JavaScript.
+            </p>
+
+            <div class="tags">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="title">
+
+        <h2>Contact Me</h2>
+
+        <p>Let's connect</p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <p>
+            I am open to job opportunities and professional
+            connections.
+        </p>
+
+        <!-- CHANGE EMAIL -->
+
+        <a href="mailto:yourmail@gmail.com">
+            Email Me
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    © 2026 Shreya Achar | Portfolio
+
+</footer>
+
+
+</body>
+</html>
+
+
+
